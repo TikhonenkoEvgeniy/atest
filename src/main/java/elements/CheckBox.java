@@ -13,14 +13,17 @@ public class CheckBox extends BaseElement {
         return this;
     }
 
-    @Override
-    public CheckBox click() {
-        super.click();
+    public CheckBox select() {
+        if (!super.element.isSelected()) {
+            super.element.click();
+        }
         return this;
     }
 
-    public CheckBox select() {
-
+    public CheckBox unselect() {
+        if (super.element.isSelected()) {
+            super.element.click();
+        }
         return this;
     }
 }

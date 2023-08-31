@@ -8,7 +8,8 @@ public abstract class BasePage {
     private final WebDriver driver = Driver.getInstance();
 
     protected void open(UrlPages url) {
-        driver.get(url.getUrl());
+        //driver.get(url.getUrl());
+        driver.get("https://demoqa.com/");
     }
 
 }

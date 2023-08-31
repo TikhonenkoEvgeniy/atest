@@ -1,4 +1,5 @@
 import common.Driver;
+import enums.Scripts;
 import org.junit.jupiter.api.AfterEach;
 import org.openqa.selenium.WebDriver;
 
@@ -8,7 +9,7 @@ public abstract class BaseTest {
     @AfterEach
     public void clear() {
         driver.manage().deleteAllCookies();
-        Driver.executeJS("window.sessionStorage.clear()");
+        Driver.executeJS(Scripts.CLEAR_STORAGE);
     }
 
 }

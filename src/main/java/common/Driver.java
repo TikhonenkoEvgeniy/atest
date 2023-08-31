@@ -1,5 +1,6 @@
 package common;
 
+import enums.Scripts;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -23,5 +24,9 @@ public class Driver {
     public static synchronized void executeJS(String script) {
         JavascriptExecutor executor = (JavascriptExecutor) getInstance();
         executor.executeScript(script);
+    }
+
+    public static void executeJS(Scripts script) {
+        executeJS(script.getScript());
     }
 }

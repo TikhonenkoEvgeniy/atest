@@ -7,20 +7,17 @@ public class TextField extends BaseElement {
         super(by);
     }
 
-    public TextField inputText(String text) {
-        super.driver.findElement(super.by).sendKeys(text);
-        return this;
-    }
-
     @Override
     public TextField waitVisible() {
         super.waitVisible();
         return this;
     }
 
-    @Override
-    public TextField click() {
-        super.click();
-        return this;
+    public void insertText(String text) {
+        super.element.sendKeys(text);
+    }
+
+    public String getText() {
+        return super.element.getText();
     }
 }

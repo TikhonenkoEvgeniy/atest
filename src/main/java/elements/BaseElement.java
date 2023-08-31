@@ -3,13 +3,14 @@ package elements;
 import common.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public abstract class BaseElement {
-    protected final By by;
+    protected final WebElement element;
     protected final WebDriver driver = Driver.getInstance();
 
     protected BaseElement(By by) {
-        this.by = by;
+        this.element = driver.findElement(by);
     }
 
     protected BaseElement waitVisible() {
@@ -17,16 +18,15 @@ public abstract class BaseElement {
         return this;
     }
 
+    protected void click() {
+        this.element.click();
+    }
+
     protected boolean isDisplayed() {
-        return driver.findElement(by).isDisplayed();
+        return this.element.isDisplayed();
     }
 
     protected boolean isEnabled() {
-        return driver.findElement(by).isEnabled();
-    }
-
-    protected BaseElement click() {
-        driver.findElement(by).click();
-        return this;
+        return this.element.isEnabled();
     }
 }

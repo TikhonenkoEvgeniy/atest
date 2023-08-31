@@ -2,8 +2,9 @@ package elements;
 
 import org.openqa.selenium.By;
 
-public class LabelText extends BaseElement {
-    public LabelText(By by) {
+public class TextArea extends BaseElement {
+    public TextArea(By by) {
         super(by);
     }
+
 }
